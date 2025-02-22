@@ -1,26 +1,7 @@
 import backbtn from "./assets/backbtn.svg";
 import main from "./assets/main.png";
-import React, { useState } from 'react';
-
-
 
 export default function App() {
-  const [textInput, setTextInput] = useState('');
-  const [list, setList] = useState([]);
-  const [length, setLength] = useState([]);
-  // Function to handle text input change
-  const handleInputChange = (e) => {
-    setTextInput(e.target.value);
-  };
-
-  // Function to split, trim, and push values to the list
-  const handleAddItems = () => {
-    const items = textInput.split(',').map(item => item.trim());
-    setList([...list, ...items]);
-    setTextInput(''); // Clear the textarea after adding items
-    setLength
-  };
-  
   return (
     <section className="bg-fuchsia-100  flex p-5 sm:min-h-screen rounded-lg sm-full relative z-0">
       <div className=" bg-white rounded-lg flex ring-2 flex-grow min-h-full flex-row max-md:flex-col w-full relative shadow1 ">
@@ -45,7 +26,7 @@ export default function App() {
             <div className="mt-5">
               <div className="prioritylabel">PRIORITY 1 :-</div>
               <div className="">
-                <textarea className="txtinput" value={textInput} onChange={handleInputChange} placeholder="enter comma seperated values" />
+                <textarea className="txtinput" />
               </div>
             </div>
 
@@ -63,9 +44,10 @@ export default function App() {
               </div>
             </div>
             <div className="flex justify-evenly items-center w-full m-2 max-sm:m-10 max-sm:flex-col flex-grow flow-row">
-              <button className="butnstyle" onClick={handleAddItems}>
+              <button className="butnstyle">
                 <div className="w-full">ADD TO LIST</div>
-              </button></div>
+              </button>
+            </div>
           </div>
         </div>
 
@@ -100,7 +82,7 @@ export default function App() {
                 The topics with PRIORITY 2:<span> </span>
               </li>
               <li>
-                The topics with PRIORITY 3:<span>{length}  </span>
+                The topics with PRIORITY 3:<span> </span>
               </li>
             </ul>
           </div>
