@@ -1,45 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Yatra+One&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Yatra+One&display=swap');
 
 .shadow1 {
-  
-  &:before, &:after {
-    content:'';
+  &:before,
+  &:after {
+    content: "";
     position: absolute;
-    top:-2px;
-    left:-2px;
-    width:calc(100% + 4px);
-    height:calc(100% + 4px);
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
     background: linear-gradient(
-      45deg, 
-      #fb0094, 
-      #0000ff, 
-      #00ff00, 
-      #ffff00, 
-      #ff0000, 
-      #fb0094, 
-      #0000ff, 
-      #00ff00, 
-      #ffff00, 
+      45deg,
+      #fb0094,
+      #0000ff,
+      #00ff00,
+      #ffff00,
+      #ff0000,
+      #fb0094,
+      #0000ff,
+      #00ff00,
+      #ffff00,
       #ff0000
     );
     background-size: 400%;
-    z-index:-1;
+    z-index: -1;
     animation: shadow1 20s linear infinite;
   }
-  
+
   &:after {
-    top:-8px;
-    left:-8px;
-    width:calc(100% + 16px);
-    height:calc(100% + 16px);    
-    filter:blur(24px);
-    opacity:0.9;
+    top: -8px;
+    left: -8px;
+    width: calc(100% + 16px);
+    height: calc(100% + 16px);
+    filter: blur(24px);
+    opacity: 0.9;
   }
-  
 }
 
 @keyframes shadow1 {
@@ -55,33 +55,32 @@
 }
 
 .shadow2 {
-  
-  &:before, &:after {
-    content:'';
+  &:before,
+  &:after {
+    content: "";
     position: absolute;
-    top:-2px;
-    left:-2px;
-    width:calc(100% + 4px);
-    height:calc(100% + 4px);
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
     background: linear-gradient(
-      45deg, 
-      #fb0094, 
-      #0000ff, 
-      #00ff00, 
-      #ffff00, 
-      #ff0000, 
-      #fb0094, 
-      #0000ff, 
-      #00ff00, 
-      #ffff00, 
+      45deg,
+      #fb0094,
+      #0000ff,
+      #00ff00,
+      #ffff00,
+      #ff0000,
+      #fb0094,
+      #0000ff,
+      #00ff00,
+      #ffff00,
       #ff0000
     );
     background-size: 400%;
-    z-index:-1;
+    z-index: -1;
     border-radius: 10px;
     animation: shadow1 20s linear infinite;
   }
-  
 }
 
 @keyframes shadow1 {
@@ -93,5 +92,31 @@
   }
   100% {
     background-position: 0 0;
+  }
+}
+
+@layer components {
+  .backbutn {
+    @apply transition ease-in-out delay-100 hover:scale-150  bg-yellow-300 hover:bg-red-500  w-7  items-center justify-center top-1 left-1 z-50 max-h-8 rounded-md;
+  }
+
+  .butnstyle {
+    @apply bg-purple-600 border-2 transition ease-in-out border-purple-400 hover:scale-110 hover:bg-purple-900 hover:border-cyan-400 hover:shadow-xl  text-white p-2 font-yatra m-1 flex w-full rounded-xl;
+  }
+
+  .showtopic {
+    @apply items-center relative justify-center w-full flex basis-4/6 min-h-64 transition ease-in-out hover:border-y-blue-300 hover:border-x-red-300 bg-green-300 border-x-blue-300 border-y-orange-300 rounded-xl border-2  bg-opacity-20 border-red-300 mt-2;
+  }
+
+  .svg {
+    @apply h-full absolute w-full top-0 left-1 fill-black hover:fill-emerald-200 transition ease-in-out delay-100;
+  }
+
+  .prioritylabel {
+    @apply font-bold font-sans italic underline underline-offset-2;
+  }
+
+  .txtinput {
+    @apply h-16 rounded-md hover:shadow-lg transition ease-in-out delay-75 hover:shadow-cyan-400 ring-4 ring-black m-2 w-full;
   }
 }
